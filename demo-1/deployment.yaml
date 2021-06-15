@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-spring
+spec:
+  selector:
+    matchLabels:
+      app: test-spring
+  replicas: 6
+  template: # template for the pods
+    metadata:
+      labels:
+        app: test-spring
+    spec:
+      containers:
+      - name: test-spring
+        image: aimhigh/test-spring:latest
